@@ -1,10 +1,9 @@
 
-function Display ({value}) {
+
+export default function Display ({value}) {
     return (
-        <div>
-            <div>{value}</div>
-        </div>
+      <div>
+        <div>{value}</div>
+      </div>
     )
 }
-
-export default Display;

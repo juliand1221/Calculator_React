@@ -1,25 +1,27 @@
 import Display from "./Display";
-import ButtonPanel from "./ButtonPanel";
+import PanelDeBotones from "./PanelDeBotones";
 import { Component } from "react";
+import operaciones from "Logic/operaciones";
+
 
 class App extends Component {
 
   state = {
     total: null,
-    next: null,
-    operator: null
+    siguiente: null,
+    operador: null,
   }
-
-
-
+    
+  handleClick = nombreDeBoton => this.setState(operaciones(this.state, nombreDeBoton))
+  
   render() {
-  return (
-    <div>
-      <h1>Ejercicio 1</h1>
-      <Display value={this.state.next || this.state.total || "0"} />
-    </div>
-  );
-}
+     return (
+      <div>
+        <Display value={this.state.siguiente || this.state.total || "0"} />
+        <PanelDeBotones clickHandle={this.handleClick} />
+      </div>
+    );
+  }
 }
 
 export default App;
