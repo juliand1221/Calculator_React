@@ -1,4 +1,5 @@
 import Button from "./Boton"
+import "Styles/panelDeBotones.css"
 
 
 export default function panelDeBotones ({clickHandle}) {
@@ -8,7 +9,7 @@ export default function panelDeBotones ({clickHandle}) {
     }
     
     return (
-        <div>
+        <div className="component-button-panel">
           <div>
             <Button name="AC" clickHandle={handleClick} gray/>
             <Button name="+/-" clickHandle={handleClick} gray/>
